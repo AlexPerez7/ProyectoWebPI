@@ -139,7 +139,7 @@ p {
     background-color: rgba(24, 64, 8);
     color: cornsilk;
     position: absolute;
-    left: 500px;
+    left: 650px;
   }
   .intro .intro-text .intro-button {
     width: 100%;
@@ -279,4 +279,9 @@ ul.errorlist{
   padding-top: .75rem;
   font-style: italic;
   color: red;
+}
+
+.autor-style{
+  text-align: left;
+  font-size: 1.0em;
 }
