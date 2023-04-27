@@ -1,0 +1,35 @@
+<!--
+Esta etiqueta indica que esta plantilla hereda de otra plantilla llamada 'base.html' que se encuentra en el 
+directorio 'ProyectoWebApp/'. Esto significa que esta plantilla incluirá todo el contenido de la plantilla base, 
+pero permitirá agregar contenido adicional y reemplazar bloques específicos.
+-->
+{% extends 'ProyectoWebApp/base.html' %}
+
+<!--
+Esta etiqueta permite cargar los archivos estáticos de tu proyecto, como hojas de estilo CSS o archivos JavaScrip
+-->
+{% load static %}
+
+
+{% block content %}
+
+    <div class="contenedorFormulario">
+
+        <h1 style="color: white; text-align: center;">Contacto</h1>
+        
+        <form action="" method="POST" style="text-align: center;">
+            {% csrf_token %}
+            <table style="color: white; margin: 20px auto;">{{miFormulario.as_table}}</table>
+            <input type="submit" value="Enviar" style="width: 150px;">
+
+        </form>
+
+        {% if "valido" in request.GET %}
+            <p style="color: white; text-align: center;">Tu mensaje se ha enviado correctamente</p>
+        {% endif %}
+        
+    </div>
+
+    <p style="color: snow;">{{request.POST}}</p>
+
+{% endblock %}
